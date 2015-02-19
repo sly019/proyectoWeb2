@@ -1,0 +1,19 @@
+Guardar los datos
+
+cd d:/universidad/programacion/progra7/proyectoweb2
+
+Sly_PC@SLY_PC-PC /c/xampp/htdocs/proyecto (master)
+git add -A
+
+Sly_PC@SLY_PC-PC /c/xampp/htdocs/proyecto (master)
+git commit -m "prueba deiber"
+
+Sly_PC@SLY_PC-PC /c/xampp/htdocs/proyecto (master)
+git push -u origin master
+
+
+//jalar los datos
+Sly_PC@SLY_PC-PC /c/xampp/htdocs/proyecto (master)
+$ git pull
+proyectoweb1 usuario
+clave Proyecto123
