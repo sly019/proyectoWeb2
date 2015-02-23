@@ -1,0 +1,93 @@
+﻿@model LescaBusiness.Models.InfoCliente
+
+@{
+    ViewBag.Title = "Editar Cliente";
+}
+
+<h2>Editar al cliente</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(model => model.ID)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.solicitud, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.solicitud)
+                @Html.ValidationMessageFor(model => model.solicitud)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.nombreCliente, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.nombreCliente)
+                @Html.ValidationMessageFor(model => model.nombreCliente)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.direccion, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.direccion)
+                @Html.ValidationMessageFor(model => model.direccion)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.contacto, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.contacto)
+                @Html.ValidationMessageFor(model => model.contacto)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.telefono, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.telefono)
+                @Html.ValidationMessageFor(model => model.telefono)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Enum, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EnumDropDownListFor(model => model.Enum)
+                @Html.ValidationMessageFor(model => model.Enum)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.volocidadcontratada, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.volocidadcontratada)
+                @Html.ValidationMessageFor(model => model.volocidadcontratada)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.cpe, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.cpe)
+                @Html.ValidationMessageFor(model => model.cpe)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Guardar" class="btn btn-default" />  |
+                   @Html.ActionLink("Regresar", "Index")
+            </div>
+        </div>
+    </div>
+}
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
