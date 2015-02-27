@@ -1,6 +1,6 @@
 Guardar los datos
 
-cd d:/universidad/programacion/progra7/proyectoweb2
+cd d:/universidad/programacion/progra7/proyecto
 
 Sly_PC@SLY_PC-PC /c/xampp/htdocs/proyecto (master)
 git add -A

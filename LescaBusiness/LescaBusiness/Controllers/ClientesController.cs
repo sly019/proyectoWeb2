@@ -7,6 +7,10 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using LescaBusiness.Models;
+using System.Net.Mail;
+using System.Net.Mime;
+using System.Text;
+using SendGrid;
 
 namespace LescaBusiness.Controllers
 {
@@ -38,6 +42,7 @@ namespace LescaBusiness.Controllers
         // GET: /Clientes/Create
         public ActionResult Create()
         {
+            
             return View();
         }
 
@@ -52,9 +57,38 @@ namespace LescaBusiness.Controllers
             {
                 db.InfoCliente.Add(infocliente);
                 db.SaveChanges();
+
+                // Create the email object first, then add the properties.
+                var myMessage = new SendGridMessage();
+
+                // Add the message properties.
+                myMessage.From = new MailAddress("deivermora19@gmail.com");
+
+                // Add multiple addresses to the To field.
+                List<String> recipients = new List<String>
+                {
+                    @"Deiber <deivermora19@gmail.com>"
+                };
+                myMessage.AddTo(recipients);
+                myMessage.Subject = "Correo de confirmación";
+
+                //Add Text bodies
+                myMessage.Text = "Nuevo cliente empresarial creado" + "\n" + "\n" + "Nombre: "+ infocliente.nombreCliente + "\n" + "Solicitud #: " + infocliente.solicitud + "\n" 
+                                    + "Direccion: " + infocliente.direccion ;
+
+                // Create network credentials to access your SendGrid account.
+                var username = "sly019";
+                var pswd = "demobA1987%";
+
+                var credentials = new NetworkCredential(username, pswd);
+
+                // Create an Web transport for sending email.
+                var transportWeb = new Web(credentials);
+
+                // Send the email.
+                transportWeb.Deliver(myMessage);
                 return RedirectToAction("Index");
             }
-
             return View(infocliente);
         }
 

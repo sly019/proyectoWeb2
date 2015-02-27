@@ -45,6 +45,12 @@
       <HintPath>..\packages\EntityFramework.6.1.2\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="SendGrid.SmtpApi">
+      <HintPath>..\packages\SendGrid.SmtpApi.1.2.1\lib\net40\SendGrid.SmtpApi.dll</HintPath>
+    </Reference>
+    <Reference Include="SendGridMail">
+      <HintPath>..\packages\Sendgrid.5.1.0\lib\SendGridMail.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -147,6 +153,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
