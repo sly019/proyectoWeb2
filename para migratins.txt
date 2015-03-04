@@ -1,0 +1,28 @@
+packet manager
+
+
+enable-migrations
+add-migrations "nombre"
+update-database
+
+
+
+
+
+
+
+
+
+
+new modelo add clase 
+se edita la clase normal con sus propiedades
+
+
+nuevo controler ---> elemento scafold  ---> entity frame
+
+nombre controler
+clase modelo --> del modelo que qeuremos conectar
+clase contexto ---> se da el unico de context
+
+pagina diseño
+~/Views/Shared/_Layout.cshtml

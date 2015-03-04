@@ -1,0 +1,25 @@
+﻿@model Lesca.Models.Usuarios
+@{
+    ViewBag.Title = "LogIn";
+    Layout = "~/Views/Shared/LayoutNew.cshtml";
+}
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true, " ERROR de LOGIN. Revise su correo");
+    <div>
+        <fieldset>
+            <legend>Login vista</legend>
+            <div> @Html.LabelFor(u=>u.userEmail)</div>
+            <div> @Html.TextBoxFor(u=>u.userEmail)
+                @Html.ValidationMessageFor(u=>u.userEmail)
+            </div>
+
+            <div> @Html.LabelFor(u=>u.password)</div>
+            <div> @Html.PasswordFor(u=>u.password)
+                @Html.ValidationMessageFor(u=>u.password)
+            </div><br />
+            <input type="submit" value="Log In" />
+        </fieldset>
+    </div>    
+}
+
