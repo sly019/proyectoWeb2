@@ -1,0 +1,98 @@
+﻿@model Lesca.Models.Clientes
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/LayoutVisor.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Clientes</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.solicitud)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.solicitud)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.direccion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.direccion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.contacto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.contacto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.telefono)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.telefono)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Enum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Enum)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cpe)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cpe)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.volocidad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.volocidad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IP_publica)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IP_publica)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IP_Privada)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IP_Privada)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Regresar", "Clients")
+</p>

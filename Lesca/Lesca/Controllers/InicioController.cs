@@ -14,5 +14,15 @@ namespace Lesca.Controllers
         {
             return View();
         }
+        
+        public ActionResult Operador()
+        {
+            return View();
+        }
+
+        public ActionResult Visor()
+        {
+            return View();
+        }
 	}
 }

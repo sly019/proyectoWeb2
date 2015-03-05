@@ -33,8 +33,20 @@ namespace Lesca.Controllers
             {
                 if (IsValid(user.userEmail, user.password))
                 {
+                    Usuarios usuario = db.Usuarios.FirstOrDefault(u => u.userEmail.Equals(user.userEmail));
                     FormsAuthentication.SetAuthCookie(user.userEmail, false);
-                    return RedirectToAction("Index", "Inicio"); //Si el login corresponde me devuelve a inicio
+                    if (usuario.Enum.ToString() == "Administrador")
+                    {
+                        return RedirectToAction("Index", "Inicio"); 
+                    }
+                    if (usuario.Enum.ToString() == "Operador")
+                    {
+                        return RedirectToAction("Index", "Operador"); 
+                    }
+                    if (usuario.Enum.ToString() == "Visor")
+                    {
+                        return RedirectToAction("Index", "Visor"); 
+                    }
                 }
                 else
                 {
@@ -44,23 +56,7 @@ namespace Lesca.Controllers
             return View(user);
         }
 
-        [HttpGet]
-        public ActionResult Registration()
-        {
-            return View();
-        }
-
-        [HttpPost]
-        public ActionResult Registration(Models.Usuarios user)
-        {
-            return View();
-        }
-
-        public ActionResult LogOut()
-        {
-            return View();
-        }
-
+       
         private bool IsValid(string UserEmail, string password)
         {
             var crypto = new SimpleCrypto.PBKDF2();
@@ -76,11 +72,7 @@ namespace Lesca.Controllers
                         IsValid = true;
                     }
                 }
-           
-
             return IsValid;
         }
-
-
 	}
 }

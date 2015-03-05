@@ -47,6 +47,12 @@
       <HintPath>..\packages\EntityFramework.6.1.2\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="SendGrid.SmtpApi">
+      <HintPath>..\packages\SendGrid.SmtpApi.1.2.1\lib\net40\SendGrid.SmtpApi.dll</HintPath>
+    </Reference>
+    <Reference Include="SendGridMail">
+      <HintPath>..\packages\Sendgrid.5.1.0\lib\SendGridMail.dll</HintPath>
+    </Reference>
     <Reference Include="SimpleCrypto">
       <HintPath>..\packages\SimpleCrypto.0.3.30.26\lib\SimpleCrypto.dll</HintPath>
     </Reference>
@@ -127,9 +133,12 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\ClienteController.cs" />
+    <Compile Include="Controllers\HistorialController.cs" />
     <Compile Include="Controllers\InicioController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\OperadorController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
+    <Compile Include="Controllers\VisorController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -145,8 +154,17 @@
     <Compile Include="Migrations\201503040735171_Para_Password_Encripted.Designer.cs">
       <DependentUpon>201503040735171_Para_Password_Encripted.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201503050645516_Add_Historial.cs" />
+    <Compile Include="Migrations\201503050645516_Add_Historial.Designer.cs">
+      <DependentUpon>201503050645516_Add_Historial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201503050723288_Add_Historial_ID.cs" />
+    <Compile Include="Migrations\201503050723288_Add_Historial_ID.Designer.cs">
+      <DependentUpon>201503050723288_Add_Historial_ID.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Clientes.cs" />
+    <Compile Include="Models\Historial.cs" />
     <Compile Include="Models\LescaDbContext.cs" />
     <Compile Include="Models\Usuarios.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -171,6 +189,21 @@
     <Content Include="Views\Login\LogIn.cshtml" />
     <Content Include="Views\Login\LogOut.cshtml" />
     <Content Include="Views\Shared\LayoutNew.cshtml" />
+    <Content Include="Views\Shared\LayoutOperador.cshtml" />
+    <Content Include="Views\Operador\Index.cshtml" />
+    <Content Include="Views\Visor\Index.cshtml" />
+    <Content Include="Views\Visor\Clients.cshtml" />
+    <Content Include="Views\Shared\LayoutVisor.cshtml" />
+    <Content Include="Views\Visor\DetailsClient.cshtml" />
+    <Content Include="Views\Operador\Clients.cshtml" />
+    <Content Include="Views\Operador\Delete.cshtml" />
+    <Content Include="Views\Operador\Details.cshtml" />
+    <Content Include="Views\Operador\Edit.cshtml" />
+    <Content Include="Views\Historial\Create.cshtml" />
+    <Content Include="Views\Historial\Delete.cshtml" />
+    <Content Include="Views\Historial\Details.cshtml" />
+    <Content Include="Views\Historial\Edit.cshtml" />
+    <Content Include="Views\Historial\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -190,6 +223,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201503040735171_Para_Password_Encripted.resx">
       <DependentUpon>201503040735171_Para_Password_Encripted.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201503050645516_Add_Historial.resx">
+      <DependentUpon>201503050645516_Add_Historial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201503050723288_Add_Historial_ID.resx">
+      <DependentUpon>201503050723288_Add_Historial_ID.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

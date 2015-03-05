@@ -16,7 +16,12 @@ namespace Lesca
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Login", action = "LogIn", id = UrlParameter.Optional }
+                defaults: new { controller = "Login", action = "LogIn", id = UrlParameter.Optional });
+
+            routes.MapRoute(
+                name: "Opera",
+                url: "Opera",
+                defaults: new { controller = "Inicio", action = "Operador", id = UrlParameter.Optional }
             );
         }
     }

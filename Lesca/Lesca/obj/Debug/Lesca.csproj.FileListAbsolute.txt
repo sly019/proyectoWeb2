@@ -26,7 +26,11 @@ D:\Universidad\Programacion\Progra7\proyecto\Lesca\Lesca\bin\es\System.Web.WebPa
 D:\Universidad\Programacion\Progra7\proyecto\Lesca\Lesca\bin\es\System.Web.WebPages.Razor.resources.dll
 D:\Universidad\Programacion\Progra7\proyecto\Lesca\Lesca\obj\Debug\Lesca.Migrations.InitialCreate.resources
 D:\Universidad\Programacion\Progra7\proyecto\Lesca\Lesca\obj\Debug\Lesca.Migrations.Scaffold_Usuario.resources
+D:\Universidad\Programacion\Progra7\proyecto\Lesca\Lesca\obj\Debug\Lesca.Migrations.Para_Password_Encripted.resources
 D:\Universidad\Programacion\Progra7\proyecto\Lesca\Lesca\obj\Debug\Lesca.csproj.GenerateResource.Cache
 D:\Universidad\Programacion\Progra7\proyecto\Lesca\Lesca\obj\Debug\Lesca.dll
 D:\Universidad\Programacion\Progra7\proyecto\Lesca\Lesca\obj\Debug\Lesca.pdb
-D:\Universidad\Programacion\Progra7\proyecto\Lesca\Lesca\obj\Debug\Lesca.Migrations.Para_Password_Encripted.resources
+D:\Universidad\Programacion\Progra7\proyecto\Lesca\Lesca\bin\SendGrid.SmtpApi.dll
+D:\Universidad\Programacion\Progra7\proyecto\Lesca\Lesca\bin\SendGridMail.dll
+D:\Universidad\Programacion\Progra7\proyecto\Lesca\Lesca\obj\Debug\Lesca.Migrations.Add_Historial.resources
+D:\Universidad\Programacion\Progra7\proyecto\Lesca\Lesca\obj\Debug\Lesca.Migrations.Add_Historial_ID.resources

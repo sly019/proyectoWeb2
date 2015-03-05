@@ -66,9 +66,6 @@ namespace Lesca.Controllers
                 db.Usuarios.Add(sysUser);
                 db.SaveChanges();
 
-
-
-
                 return RedirectToAction("Index");
             }
 
@@ -95,10 +92,17 @@ namespace Lesca.Controllers
         // más información vea http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include="ID,Nombre,userEmail,password,Enum")] Usuarios usuarios)
+        public ActionResult Edit([Bind(Include = "ID,Nombre,userEmail,password,Enum, PasswordSalt")] Usuarios usuarios)
         {
-            if (ModelState.IsValid)
+            var crypto = new SimpleCrypto.PBKDF2();
+            var encrpPass = crypto.Compute(usuarios.password);
+
+            usuarios.password = encrpPass;
+            usuarios.PasswordSalt = crypto.Salt;
+
+            if (!ModelState.IsValid)
             {
+                
                 db.Entry(usuarios).State = System.Data.Entity.EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
