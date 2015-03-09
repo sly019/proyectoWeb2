@@ -34,3 +34,5 @@ D:\Universidad\Programacion\Progra7\proyecto\Lesca\Lesca\bin\SendGrid.SmtpApi.dl
 D:\Universidad\Programacion\Progra7\proyecto\Lesca\Lesca\bin\SendGridMail.dll
 D:\Universidad\Programacion\Progra7\proyecto\Lesca\Lesca\obj\Debug\Lesca.Migrations.Add_Historial.resources
 D:\Universidad\Programacion\Progra7\proyecto\Lesca\Lesca\obj\Debug\Lesca.Migrations.Add_Historial_ID.resources
+D:\Universidad\Programacion\Progra7\proyecto\Lesca\Lesca\obj\Debug\Lesca.csprojResolveAssemblyReference.cache
+D:\Universidad\Programacion\Progra7\proyecto\Lesca\Lesca\obj\Debug\Lesca.Migrations.Modificacion_Historial.resources

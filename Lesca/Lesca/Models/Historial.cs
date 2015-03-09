@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
+using System.Data;
+using System.Text;
 
 namespace Lesca.Models
 {
@@ -12,9 +14,6 @@ namespace Lesca.Models
 
         [Display(Name = "Id_Cliente")]
         public Int32 IdCliente{ get; set; }
-
-        [Display(Name = "Cliente")]
-        public string NombreCliente { get; set; }
 
         [Display(Name = "Fecha")]
         public string fecha { get; set; }

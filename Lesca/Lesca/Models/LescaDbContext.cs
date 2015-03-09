@@ -24,6 +24,11 @@ namespace Lesca.Models
         public System.Data.Entity.DbSet<Lesca.Models.Usuarios> Usuarios { get; set; }
 
         public System.Data.Entity.DbSet<Lesca.Models.Historial> Historials { get; set; }
-    
+
+
+        internal Historial SqlQuery(string p)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

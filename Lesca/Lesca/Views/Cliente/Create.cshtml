@@ -1,11 +1,11 @@
 ﻿@model Lesca.Models.Clientes
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Nuevo cliente";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Create</h2>
+<h2>Crear nuevo cliente</h2>
 
 
 @using (Html.BeginForm()) 
@@ -13,7 +13,6 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>Clientes</h4>
         <hr />
         @Html.ValidationSummary(true)
 
@@ -99,14 +98,14 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Guardar" class="btn btn-default" />
             </div>
         </div>
     </div>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Regresar", "Index")
 </div>
 
 <script src="~/Scripts/jquery-1.10.2.min.js"></script>

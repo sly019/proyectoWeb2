@@ -1,14 +1,13 @@
 ﻿@model Lesca.Models.Usuarios
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Detailles";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Details</h2>
+<h2>Detalles de usuario</h2>
 
 <div>
-    <h4>Usuarios</h4>
 	<hr />
     <dl class="dl-horizontal">
         <dt>
@@ -26,15 +25,6 @@
         <dd>
             @Html.DisplayFor(model => model.userEmail)
         </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.password)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.password)
-        </dd>
-
         <dt>
             @Html.DisplayNameFor(model => model.Enum)
         </dt>
@@ -46,6 +36,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Editar", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Regresar", "Index")
 </p>

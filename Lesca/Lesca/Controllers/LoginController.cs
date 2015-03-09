@@ -1,5 +1,4 @@
 ﻿using Lesca.Models;
-using Lesca.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,27 +30,35 @@ namespace Lesca.Controllers
         {
             if (!ModelState.IsValid) // pendiente validar que se venga el estado por el post
             {
-                if (IsValid(user.userEmail, user.password))
+                if (user.password == null || user.userEmail == null)
                 {
-                    Usuarios usuario = db.Usuarios.FirstOrDefault(u => u.userEmail.Equals(user.userEmail));
-                    FormsAuthentication.SetAuthCookie(user.userEmail, false);
-                    if (usuario.Enum.ToString() == "Administrador")
-                    {
-                        return RedirectToAction("Index", "Inicio"); 
-                    }
-                    if (usuario.Enum.ToString() == "Operador")
-                    {
-                        return RedirectToAction("Index", "Operador"); 
-                    }
-                    if (usuario.Enum.ToString() == "Visor")
-                    {
-                        return RedirectToAction("Index", "Visor"); 
-                    }
+                    ModelState.AddModelError("", "");
                 }
                 else
                 {
-                    ModelState.AddModelError("", "login incorrecto");
+                    if (IsValid(user.userEmail, user.password))
+                    {
+                        Usuarios usuario = db.Usuarios.FirstOrDefault(u => u.userEmail.Equals(user.userEmail));
+                        FormsAuthentication.SetAuthCookie(user.userEmail, false);
+                        if (usuario.Enum.ToString() == "Administrador")
+                        {
+                            return RedirectToAction("Index", "Inicio");
+                        }
+                        if (usuario.Enum.ToString() == "Operador")
+                        {
+                            return RedirectToAction("Index", "Operador");
+                        }
+                        if (usuario.Enum.ToString() == "Visor")
+                        {
+                            return RedirectToAction("Index", "Visor");
+                        }
+                    }
+                    else
+                    {
+                        ModelState.AddModelError("", "");
+                    }
                 }
+                
             }
             return View(user);
         }
@@ -62,7 +69,6 @@ namespace Lesca.Controllers
             var crypto = new SimpleCrypto.PBKDF2();
 
             bool IsValid = false;
-            //Clientes clientes = db.Clientes.Find(id);
             Usuarios user = db.Usuarios.FirstOrDefault(u => u.userEmail.Equals(UserEmail));
 
                 if (user != null)

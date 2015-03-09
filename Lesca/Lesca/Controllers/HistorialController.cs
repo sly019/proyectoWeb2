@@ -21,23 +21,30 @@ namespace Lesca.Controllers
         }
 
         // GET: /Historial/Details/5
-        public ActionResult Details(int? id)
+        public ActionResult Details(int id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Historial historial = db.Historials.Find(id);
+            //Historial historial = db.Historials.Find(id);
+            Historial historial = db.Historials.FirstOrDefault(x => x.IdCliente == id);
+          // Historial historia = db.Historials.Where(c => c.IdCliente == id).ToList();  
+          // Historial historia = new { historia = db.Historials.Where(c => c.IdCliente.Equals(i)).ToList() };
+
             if (historial == null)
             {
-                return HttpNotFound();
+                ViewBag.ID = 444;
+                return Redirect("/Cliente/Index/444");
             }
             return View(historial);
         }
 
         // GET: /Historial/Create
-        public ActionResult Create()
+        public ActionResult Create(int? id)
         {
+            Clientes cliente = db.Clientes.Find(id);
+            ViewBag.idCliente = cliente.ID;
             return View();
         }
 
@@ -46,14 +53,15 @@ namespace Lesca.Controllers
         // más información vea http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include="ID,IdCliente,NombreCliente,fecha,DescripFallo")] Historial historial)
+        public ActionResult Create([Bind(Include="ID,IdCliente,fecha,DescripFallo")] Historial historial,int id)
         {
-         //   Clientes cliente = db.Clientes.Find(id);
+            
             if (ModelState.IsValid)
             {
+                historial.IdCliente = id;
                 db.Historials.Add(historial);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Details/" + historial.IdCliente);
             }
 
             return View(historial);
@@ -79,13 +87,13 @@ namespace Lesca.Controllers
         // más información vea http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include="ID,IdCliente,NombreCliente,fecha,DescripFallo")] Historial historial)
+        public ActionResult Edit([Bind(Include="ID,IdCliente,fecha,DescripFallo")] Historial historial)
         {
             if (ModelState.IsValid)
             {
                 db.Entry(historial).State = System.Data.Entity.EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Details/"+ historial.IdCliente);
             }
             return View(historial);
         }
@@ -113,7 +121,7 @@ namespace Lesca.Controllers
             Historial historial = db.Historials.Find(id);
             db.Historials.Remove(historial);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Cliente/Index");
         }
 
         protected override void Dispose(bool disposing)

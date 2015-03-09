@@ -1,15 +1,14 @@
 ﻿@model Lesca.Models.Clientes
 
 @{
-    ViewBag.Title = "Delete";
+    ViewBag.Title = "Eliminar";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Delete</h2>
+<h2>Eliminar</h2>
 
-<h3>Are you sure you want to delete this?</h3>
+<h3>Desea eliminar este cliente???</h3>
 <div>
-    <h4>Clientes</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -98,8 +97,8 @@
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+            <input type="submit" value="Eliminar" class="btn btn-default" /> |
+            @Html.ActionLink("Regresar", "Index")
         </div>
     }
 </div>

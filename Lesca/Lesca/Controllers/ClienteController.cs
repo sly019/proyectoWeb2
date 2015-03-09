@@ -20,9 +20,18 @@ namespace Lesca.Controllers
         private LescaDbContext db = new LescaDbContext();
 
         // GET: /Cliente/
-        public ActionResult Index()
+        
+        public ActionResult Index(int? id)
         {
-            return View(db.Clientes.ToList());
+            if (id == null)
+            {
+                return View(db.Clientes.ToList());
+            }
+            else
+            {
+                TempData["notice"] = "Usuario no tiene historial";
+                return View(db.Clientes.ToList() );
+            }            
         }
 
         // GET: /Cliente/Details/5
